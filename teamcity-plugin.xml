@@ -2,15 +2,15 @@
 <teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
   <info>
     <name>tcAgentAuthorise</name>
-    <display-name>tcAgentAuthorise</display-name>
+    <display-name>Agent Auto-Authorise Server Plugin</display-name>
     <version>@Version@</version>
-    <description>Plugin description</description>
-    <download-url>Plugin download URL</download-url>
-    <email>Plugin author e-mail</email>
+    <description>Allow for agents to be configured to automatically join a pool</description>
+    <download-url>There isn't a Plugin download URL yet</download-url>
+    <email>peter@viertel.org</email>
     <vendor>
-      <name>@VendorName@</name>
-      <url>@VendorURL@</url>
-      <logo>Plugin vendor logo URL</logo>
+      <name>virtualPete</name>
+      <url>http://peter.viertel.org</url>
+      <logo></logo>
     </vendor>
   </info>
   <deployment use-separate-classloader="true" />
