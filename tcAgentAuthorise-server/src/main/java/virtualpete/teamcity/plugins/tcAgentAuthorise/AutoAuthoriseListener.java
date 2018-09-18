@@ -63,7 +63,7 @@ public class AutoAuthoriseListener extends BuildServerAdapter {
     Map<String, String> parameters = sBuildAgent.getAvailableParameters();
 
     boolean unReady = (sBuildAgent.isOutdated() || sBuildAgent.isUpgrading());
-    boolean autoAuth = ( parameters.get("agent_auto_authorise").equals("static") || parameters.get("agent_auto_authorise").equals("true") );
+    boolean autoAuth = ( parameters.containsKey("agent_auto_authorise") && (parameters.get("agent_auto_authorise").equals("static") || parameters.get("agent_auto_authorise").equals("true")) );
     boolean notAuthorised = !sBuildAgent.isAuthorized();
 
     if (!unReady && notAuthorised && autoAuth) {
@@ -79,7 +79,7 @@ public class AutoAuthoriseListener extends BuildServerAdapter {
     Map<String,String> parameters = sBuildAgent.getAvailableParameters();
 
     if(sBuildAgent.isAuthorized()) {
-      if (parameters.get("agent_auto_undiscover").equals("true")) {
+      if (parameters.containsKey("agent_auto_undiscover") && parameters.get("agent_auto_undiscover").equals("true")) {
         sBuildAgent.setAuthorized(false, null, "autoAuthorise agent auto forgotten");
         Loggers.AGENT.info("AutoAuthoriseListener has auto undiscovered: " + sBuildAgent.getHostName());
       }
